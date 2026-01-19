@@ -45,8 +45,16 @@
           <header id="site_header" class="header mobile-menu-hide">
             <div class="header-content">
               <div class="header-photo">
-                <img src="img/photo_trokicki.png" alt="My_photo">
+                <img id="random-photo" alt="My_photo">
               </div>
+
+              <script>
+                const photoCount = 16;
+                const photoId = Math.floor(Math.random() * photoCount + 1);
+                const photoPath = `/img/photos/photo_${photoId}.jpg`
+                document.getElementById("random-photo").src = photoPath;
+              </script>
+
               <div class="header-titles">
                 <h2>Thomas Rokicki</h2>
                 <h4> Cybersecurity Researcher </h4>
@@ -172,7 +180,9 @@
                             <div class="ci-text">
                               <h4>  <i class="fa fa-server"></i> Cache Attacks in Modern/Multi-Socket x86 Systems (Work In Progress) </h4>
                               <p>  Guillaume Dider, Augustin Lucas, <u>Thomas Rokicki</u> <br>
-                              Accepted at the 1st Workshop on Hardware-Supported Software Security (HS3) 2025 </p>
+                              Accepted at the 1st Workshop on Hardware-Supported Software Security (HS3) (WIP) 2025 <br>
+                              Accepted at the 2nd Microarchitecture Security Conference (uASC) 2026 <br>
+                            </p>
                               <div class="paper-icons">
                                 <ul>
                                   <li><a href="publications/wip_numa.pdf" target="_blank"><i class="far fa-file-pdf"></i></a></li>
@@ -504,7 +514,7 @@
     <script src='js/owl.carousel.min.js'></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script> -->
     <script src="js/jquery.googlemap.js"></script>
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
