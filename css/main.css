@@ -1954,3 +1954,19 @@ blockquote {
   background-color: #f5f6f7;
   border: 1px solid #dde0e3;
 }
+
+
+/* =============================================================================
+13. Custom icons
+============================================================================= */
+/* Lobster from Fluent Emoji High Contrast (Microsoft, MIT License),
+   coloured like the FontAwesome icons through currentColor */
+.icon-lobster {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+  background-color: currentColor;
+  -webkit-mask: url('../img/lobster.svg') no-repeat center / contain;
+  mask: url('../img/lobster.svg') no-repeat center / contain;
+}
