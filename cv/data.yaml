@@ -1,0 +1,232 @@
+# Single source of truth for the website (public/index.html) and the CV (public/files/cv_*.pdf).
+# After editing, run `make` from the repository root.
+#
+# Text fields may be a plain string or a {en: ..., fr: ...} map; the CV picks the
+# language, the website always uses `en`. Quote any value containing ": ".
+# Any value containing TODO is rendered in red in the CV and reported by `make`.
+#
+# Link kinds: pdf, code, video, website, thesis (website/CV icons and labels).
+# Local links (no http://) are relative to the website root (public/) and must exist.
+
+profile:
+  name: Thomas Rokicki
+  title: Cybersecurity Researcher        # website sidebar
+  email: thomas.rokicki@irisa.fr
+  location: Rennes, France
+  website: https://thomas.rokicki.fr
+  # Website sidebar icons, in order. `cv: true` also shows the link in the CV header.
+  links:
+    - {kind: github, url: "https://github.com/thomasrokicki", cv: true}
+    - {kind: twitter, url: "https://twitter.com/ThomasRokicki"}
+    - {kind: linkedin, url: "https://www.linkedin.com/in/thomas-rokicki/"}
+    - {kind: scholar, url: "https://scholar.google.com/citations?user=eg9v2KQAAAAJ", cv: true}
+    - {kind: cv, url: files/cv_thomas_rokicki.pdf}
+
+# CV only. Newest first; omit `end` for the current position.
+positions:
+  - title: {en: Assistant Professor, fr: Maître de conférences}
+    institution: CentraleSupélec, IRISA
+    team: {en: Sushi team, fr: Équipe Sushi}
+    location: Rennes, France
+    start: 2024
+  - title: {en: Research Engineer, fr: Ingénieur de recherche}
+    institution: Solent
+    location: Paris, France
+    start: 2023
+    end: 2024
+  - title: {en: PhD student, fr: Doctorant}
+    institution: CNRS, IRISA
+    team: {en: EMSEC team (now SPICY), fr: Équipe EMSEC (aujourd'hui SPICY)}
+    location: Rennes, France
+    start: 2019
+    end: 2022
+
+
+# CV only. Newest first.
+education:
+  - degree: {en: Ph.D. in Computer Science, fr: Doctorat en informatique}
+    institution: INSA Rennes, IRISA
+    team: {en: EMSEC team (now SPICY), fr: Équipe EMSEC (aujourd'hui SPICY)}
+    location: Rennes, France
+    start: 2019
+    end: 2022
+    thesis: "Side Channels in Web Browsers: Applications to Security and Privacy"
+    supervisors: [Gildas Avoine, Clémentine Maurice]
+    jury:
+      president: [Lilian Bossuet]
+      reviewers: [Jan Reineke, Billy Bob Brumley]
+      examiners: [Veelasha Moonsamy, Walter Rudametkin]
+  - degree: {en: "Engineering Degree (M.Sc.), Cybersecurity", fr: "Diplôme d'ingénieur, cybersécurité"}
+    institution: {en: IMT Atlantique (formerly Télécom Bretagne), fr: IMT Atlantique (ex-Télécom Bretagne)}
+    location: Rennes / Brest, France
+    start: 2016
+    end: 2019
+  - degree: {en: Exchange semester, fr: Semestre d'échange}
+    institution: Universidad de la República (UdelaR)
+    location: Montevideo, Uruguay
+    start: 2018
+
+# Website and CV. Newest first; the CV numbers them in this order.
+# `icon` is the website-only Font Awesome class shown before the title.
+publications:
+  - title: "HOMARD: Hammering Off-chip Memory via Aggregate power Rail Disclosure"
+    authors: [Eliott Quéré, Li-Chung Chiang, Carina Fiedler, Thomas Rokicki, Maria Méndez Real, Alessandro Palumbo, Lilian Bossuet, Rubén Salvador, Daniel Gruss]
+    venue: IEEE Symposium on Security and Privacy
+    venue_short: S&P
+    year: 2027
+    icon: icon-lobster
+    links:
+      - {kind: pdf, url: publications/homard.pdf}
+      - {kind: code, url: "https://github.com/Koyiott/homard"}
+
+  - title: clflush-based Attacks on Modern Cloud Servers
+    authors: [Guillaume Didier, Augustin Lucas, Jasper Quirke, Thomas Rokicki]
+    venue: 31st European Symposium on Research in Computer Security
+    venue_short: ESORICS
+    year: 2026
+    icon: fa fa-server
+    award:
+      level: gold
+      label: {en: Best Paper Award, fr: Prix du meilleur article}
+    links:
+      - {kind: pdf, url: publications/clflush-based_Attacks_on_Modern_Cloud_Servers.pdf}
+      - {kind: code, url: "https://doi.org/10.5281/zenodo.20807693"}
+
+  - title: "SnoopyPower! Remote Power Attacks on Cache and Coherence Paths"
+    authors: [Eliott Quéré, Maria Méndez Real, Alessandro Palumbo, Thomas Rokicki, Lilian Bossuet, Rubén Salvador]
+    venue: IEEE International Symposium on Hardware Oriented Security and Trust
+    venue_short: HOST
+    year: 2026
+    icon: fa fa-dog
+    links:
+      - {kind: pdf, url: publications/snoopy_power.pdf}
+      - {kind: code, url: "https://zenodo.org/records/19003752"}
+
+  - title: "WIP: A Second Look at Port Assignment on Intel CPUs"
+    authors: [Yarin Oziel, Tomer Laor, Shlomi Levy, Clémentine Maurice, Thomas Rokicki, Gabriel Scalosub]
+    venue: 2nd Microarchitecture Security Conference
+    venue_short: uASC
+    year: 2026
+    icon: fa fa-glasses
+    links:
+      - {kind: pdf, url: publications/uasc26-oziel.pdf}
+      - {kind: website, url: "https://uops-again.info/"}
+
+  - title: "Knock-Knock: Black-Box, Platform-Agnostic DRAM Address-Mapping Reverse Engineering"
+    authors: [Antoine Plin, Lorenzo Casalino, Thomas Rokicki, Rubén Salvador]
+    venue: 2nd Microarchitecture Security Conference
+    venue_short: uASC
+    year: 2026
+    icon: fa fa-hammer
+    links:
+      - {kind: pdf, url: publications/knockknock.pdf}
+      - {kind: code, url: "https://github.com/antpln/Knock-Knock"}
+
+  - title: "The Finger in the Power: How to Fingerprint PCs by Monitoring their Power Consumptions"
+    authors: [Marina Botvinnik, Tomer Laor, Thomas Rokicki, Clémentine Maurice, Michael Schwarz]
+    venue: Conference on Detection of Intrusions and Malware & Vulnerability Assessment
+    venue_short: DIMVA
+    year: 2023
+    icon: fa fa-plug
+    award:
+      level: silver
+      label: {en: Best Paper Award · Runner-up, fr: Prix du meilleur article · Accessit}
+    links:
+      - {kind: pdf, url: publications/FingerInThePower.pdf}
+      - {kind: code, url: "https://github.com/FingerInThePower/Finger_In_The_Power"}
+
+  - title: CPU Port Contention Without SMT
+    authors: [Thomas Rokicki, Clémentine Maurice, Michael Schwarz]
+    venue: European Symposium on Research in Computer Security
+    venue_short: ESORICS
+    year: 2022
+    icon: fa fa-search
+    links:
+      - {kind: pdf, url: publications/fpgen.pdf}
+      - {kind: code, url: "https://github.com/MIAOUS-group/port-contention-without-smt"}
+
+  - title: "Port Contention Goes Portable: Port Contention Side Channels in Web Browsers"
+    authors: [Thomas Rokicki, Clémentine Maurice, Marina Botvinnik, Yossi Oren]
+    venue: Asia Conference on Computer and Communications Security
+    venue_short: AsiaCCS
+    year: 2022
+    icon: fa fa-microchip
+    links:
+      - {kind: pdf, url: publications/wpc.pdf}
+      - {kind: code, url: "https://github.com/MIAOUS-group/web-port-contention"}
+      - {kind: video, url: "https://dl.acm.org/doi/10.1145/3488932.3517411"}
+
+  - title: "SoK: In Search of Lost Time: A Review of JavaScript Timers in Browsers"
+    authors: [Thomas Rokicki, Clémentine Maurice, Pierre Laperdrix]
+    venue: European Symposium on Security and Privacy
+    venue_short: EuroS&P
+    year: 2021
+    icon: far fa-clock
+    links:
+      - {kind: pdf, url: publications/timer-paper.pdf}
+      - {kind: code, url: "https://github.com/thomasrokicki/in-search-of-lost-time"}
+      - {kind: video, url: "https://www.youtube.com/watch?v=ivZlnlRXS-k"}
+
+# Website only. Newest first. `description` may contain [text](url) links.
+# `virtual: true` strikes through the planned location and adds "Virtual event".
+talks:
+  - year: 2022
+    event: PhD Defense
+    title: "Side channels in web browsers: application to security and privacy"
+    location: Rennes, France
+    links:
+      - {kind: pdf, url: slides/phd_defense.pdf}
+      - {kind: video, url: "https://www.youtube.com/watch?v=C55s7kY_2eY"}
+      - {kind: thesis, url: files/manuscript.pdf}
+
+  - year: 2022
+    event: ESORICS 2022
+    title: Port contention without SMT
+    location: Copenhagen, Denmark
+    links:
+      - {kind: pdf, url: slides/seqpc_talk.pdf}
+
+  - year: 2022
+    event: AsiaCCS22
+    title: Port contention in the browsers
+    location: Nagasaki, Japan
+    links:
+      - {kind: pdf, url: slides/wpc-asiaccs.pdf}
+      - {kind: video, url: "https://dl.acm.org/doi/10.1145/3488932.3517411"}
+
+  - year: 2022
+    event: SOSYSEC seminar
+    title: Port contention in the browsers
+    description: "Cybersecurity seminar organized by the french General Direction of Armaments (DGA) and INRIA, more information [here](https://seminaires-dga.inria.fr/sosysec-en-bref/)"
+    location: Rennes, France
+    links:
+      - {kind: pdf, url: slides/wpc-sosysec.pdf}
+      - {kind: video, url: "https://videos-rennes.inria.fr/video/UksGngEVE"}
+
+  - year: 2021
+    event: EuroS&P 2021
+    title: "In Search of Lost Time: A Review of JavaScript Timers in Browsers"
+    location: Vienna, Austria
+    virtual: true
+    links:
+      - {kind: pdf, url: slides/in-search-of-lost-time_video.pdf}
+      - {kind: video, url: "https://www.youtube.com/watch?v=ivZlnlRXS-k"}
+
+  - year: 2021
+    event: Pass The Salt 2021
+    title: "In Search of Lost Time: A Review of JavaScript Timers in Browsers"
+    description: "Free software and security conference, more information [here](https://2021.pass-the-salt.org/)"
+    location: Lille, France
+    virtual: true
+    links:
+      - {kind: pdf, url: slides/in-search-of-lost-time_pts.pdf}
+      - {kind: video, url: "https://passthesalt.ubicast.tv/videos/2021-in-search-of-lost-time-a-review-of-javascript-timers-in-browsers/"}
+
+  - year: 2021
+    event: SPIRALS seminar
+    title: "In Search of Lost Time: A Review of JavaScript Timers in Browsers"
+    description: "Team seminar of the [SPIRALS team](https://team.inria.fr/spirals/)"
+    location: Lille, France
+    virtual: true
+    links:
+      - {kind: pdf, url: slides/in-search-of-lost-time_pts.pdf}
